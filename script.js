@@ -8,14 +8,15 @@ Person.prototype.greet = ()=>{
 }
 
 function Employee(name, age, jobTitle) {
-	this.name = name;
-	this.age = age;
+	Person.call(this, name, age)
 	this.jobTitle = jobTitle;
 
 	this.jobGreet = ()=>{
 		return this.greet() + `, and my job title is ${this.jobTitle}`
 	}
 }
+
+Employee.prototype = Object.create(Person.prototype);
 
 // Do not change code below this line
 window.Person = Person;
