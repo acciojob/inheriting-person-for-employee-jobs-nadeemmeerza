@@ -18,6 +18,9 @@ function Employee(name, age, jobTitle) {
 
 Employee.prototype = Object.create(Person.prototype);
 
+let empl = new Employee("Bob", 35, "Manager");
+console.log(empl.jobGreet());
+
 // Do not change code below this line
 window.Person = Person;
 window.Employee = Employee;
